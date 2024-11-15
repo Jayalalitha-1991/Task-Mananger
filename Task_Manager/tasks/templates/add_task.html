@@ -1,0 +1,7 @@
+<h1>{% if task %}Edit Task{% else %}Add Task{% endif %}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'view_all_tasks' %}">Back to Task List</a>
